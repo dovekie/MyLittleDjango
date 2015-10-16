@@ -1,0 +1,5 @@
+*.pyc
+*/include
+*/lib
+*/*.pyc
+secret_database_settings.py

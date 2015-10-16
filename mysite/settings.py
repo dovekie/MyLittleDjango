@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
+from secret_database_settings import database_settings
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -30,6 +31,8 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
+# Every new app goes in this set!
+
 INSTALLED_APPS = (
     'django.contrib.admin',
     'django.contrib.auth',
@@ -37,6 +40,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'polls'
 )
 
 MIDDLEWARE_CLASSES = (
@@ -74,16 +78,7 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'my_little_django',
-        'USER': 'rarity',
-        'PASSWORD': 'beautifulheart',
-        'HOST': 'localhost',
-        'PORT': '',
-    }
-}
+DATABASES = database_settings
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
