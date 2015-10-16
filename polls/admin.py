@@ -15,6 +15,7 @@ class QuestionAdmin(admin.ModelAdmin):
 		('Date Information', {'fields': ['pub_date'], 'classes': ['collapse']}) # 'collapse' makes a field hide itself until clicked
 	]
 	inlines = [ChoiceInline]
+	list_display = ('question_text', 'pub_date', 'was_published_recently')
 
 
 admin.site.register(Question, QuestionAdmin)
